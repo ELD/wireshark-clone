@@ -1,0 +1,8 @@
+[package]
+name = "wireshark-clone"
+version = "0.1.0"
+authors = ["Eric Dattore <eric.dattore@gmail.com>"]
+
+[dependencies]
+pcap = "0.5.*"
+

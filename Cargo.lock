@@ -1,0 +1,23 @@
+[root]
+name = "wireshark-clone"
+version = "0.1.0"
+dependencies = [
+ "pcap 0.5.7 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "libc"
+version = "0.2.17"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "pcap"
+version = "0.5.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "libc 0.2.17 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[metadata]
+"checksum libc 0.2.17 (registry+https://github.com/rust-lang/crates.io-index)" = "044d1360593a78f5c8e5e710beccdc24ab71d1f01bc19a29bcacdba22e8475d8"
+"checksum pcap 0.5.7 (registry+https://github.com/rust-lang/crates.io-index)" = "83dd381490e2a93e27ec842db85b7884c07ed83772c3c7130cfb8f86f36dee1e"
