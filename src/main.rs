@@ -15,7 +15,11 @@ fn main() {
         println!("Datalink description: {}", datalink.get_description().unwrap());
     }
 
+    let mut packet_count = 0;
     while let Ok(packet) = capture.next() {
         println!("Found packet: {:?}", packet);
+        packet_count += 1;
     }
+
+    println!("Number of packets processed: {}", packet_count);
 }
