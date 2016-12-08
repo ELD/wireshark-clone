@@ -13,28 +13,12 @@ fn main() {
 
     let datalinks = capture.list_datalinks().ok().expect("Something went wrong reading the pcap file");
 
-    for datalink in datalinks {
-        println!("Datalink: {}", datalink.get_name().unwrap());
-        println!("Datalink description: {}", datalink.get_description().unwrap());
-    }
-
-    let mut packet_count = 0;
+    let mut packets: Vec<PacketTypes> = Vec::new();
     while let Ok(packet) = capture.next() {
-//        println!("Found packet: {:?}", packet);
-
-        // TODO: Classify packets based on data
-        let packet_type: u16 = ((packet.data[12] as u16) << 8) | packet.data[13] as u16;
-
-        let packet_struct = PacketTypes::new(packet.data);
-
-        if packet_type >= 1536 {
-            println!("This packet is an Ethernet II packet");
-        } else {
-            println!("This packet is a Novell 802.3 packet");
-        }
-
-        packet_count += 1;
+        packets.push(PacketTypes::new(packet.data));
     }
 
-    println!("Number of packets processed: {}", packet_count);
+    packets[0].print_link_layer_type();
+
+    println!("Number of packets processed: {}", packets.len());
 }

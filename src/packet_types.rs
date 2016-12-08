@@ -29,6 +29,16 @@ impl PacketTypes {
         let network_type = 0;
         let transport_type = 0;
 
+        if frame_type <= 1536 {
+            return PacketTypes {
+                link_layer_type: LinkLayerType::Novell8023,
+                network_layer_type: NetworkLayerType::Other,
+                transport_layer_type: TransportLayerType::Other
+            };
+        } else {
+            // TODO: Search Network and Transport types
+        }
+
         PacketTypes {
             link_layer_type: LinkLayerType::Ethernet2,
             network_layer_type: NetworkLayerType::ARP,
