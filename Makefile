@@ -1,8 +1,8 @@
 project4:
-	cargo build --release
+	/u/wy/iq/edattore/.cargo/bin/cargo build --release
 	cp target/release/wireshark-clone .
 
 clean:
-	cargo clean
+	/u/wy/iq/edattore/.cargo/bin/cargo clean
 	rm -rf wireshark-clone
 
