@@ -1,8 +1,6 @@
 project4:
-	/u/wy/iq/edattore/.cargo/bin/cargo build --release
-	cp target/release/wireshark-clone .
-
+	RUSTUP_HOME=/u/wy/iq/edattore/.multirust CARGO_HOME=/u/wy/iq/edattore/.cargo /u/wy/iq/edattore/.cargo/bin/cargo build --release
 clean:
-	/u/wy/iq/edattore/.cargo/bin/cargo clean
+	RUSTUP_HOME=/u/wy/iq/edattore/.multirust CARGO_HOME=/u/wy/iq/edattore/.cargo /u/wy/iq/edattore/.cargo/bin/cargo clean
 	rm -rf wireshark-clone
 
